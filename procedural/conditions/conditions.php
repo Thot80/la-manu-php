@@ -1,3 +1,21 @@
+<?php
+    // Exercice 1
+    $age = 33;
+
+    // Exercice 2
+    $isEasy = true;
+
+    // Exercice 3
+    $age = 50;
+    $gender = "homme";
+    $message = "";
+
+    // Exercice 4
+    $magnitude = 5;
+
+    //Exercice 7
+    $isOk = false;
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -38,8 +56,6 @@
             <div class="col-xl-2">
                 <p>
                     <?php
-                    $age = 33;
-
                     if ($age >= 18) {
                         echo "Vous êtes majeur";
                     }
@@ -83,8 +99,6 @@
             <div class="col-xl-2">
                 <p>
                     <?php
-                     $isEasy = true;
-
                      if ($isEasy == true) {
                          echo "C'est facile !! \n";
                      }
@@ -147,9 +161,6 @@
             <div class="col-xl-2">
                 <p>
                     <?php
-                    $age = 50;
-                    $gender = "homme";
-                    $message = "";
                     if ($gender == "homme") {
                         $message .= "Vous êtes un homme";
                     }
@@ -266,8 +277,6 @@
             <div class="col-xl-2">
                 <p>
                     <?php
-                    $magnitude = 5;
-
                     switch ($magnitude) {
                         case 1:
                             echo "Micro-séisme impossible à ressentir.";
@@ -390,7 +399,6 @@
             <div class="col-xl-2">
                 <p>
                     <?php
-                     $isOk = false;
                      if (!$isOk) {
                          echo "c'est pas bon !!!";
                      }
