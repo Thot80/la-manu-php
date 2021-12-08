@@ -2,7 +2,7 @@
 
 ## Mode d'Emploi
 
-* Pour cloner ce repo : ```bash git clone ```
+* Pour cloner ce repo : ```bash git clone https://github.com/Thot80/la-manu-php.git ```
 
 Envie de participer ?
 
