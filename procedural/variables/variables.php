@@ -1,11 +1,19 @@
-
-
 <?php
+    // Exercice 1
+    $lastname = "Kessous";
+    $firstname = "Jérémy";
+    $age = 33;
 
+    // Exercice 3
+    $maChaine = "Hello Worl !";
+    $monInt = 35;
+    $monFloat = 3.33;
+    $monBoolean = true;
 
-
-
-
+    // Exercice 5
+    $sum = 3+4;
+    $multiple = 5*20;
+    $divide = 45/5;
 
 ?>
 <!DOCTYPE html>
@@ -43,11 +51,7 @@
             </div>
             <div class="col-xl-2">
                 <p>
-                    <?php
-                    $lastname = "Kessous";
-                    $firstname = "Jérémy";
-                    $age = 33;
-    
+                    <?php 
                     echo ("Mon nom est " . $firstname. " " . $lastname.", j'ai ".$age." ans.");
                     ?>
                 </p>
@@ -118,11 +122,6 @@
             <div class="col-xl-2">
                 <p>
                     <?php
-                    $maChaine = "Hello Worl !";
-                    $monInt = 35;
-                    $monFloat = 3.33;
-                    $monBoolean = true;
-
                     echo "String : ".$maChaine."<br>";
                     echo "Entier : ".$monInt."<br>";
                     echo "Float : ".$monFloat."<br>";
@@ -152,10 +151,6 @@
             <div class="col-xl-2">
                 <p>
                     <?php
-                    $lastname = "Kessous";
-                    $firstname = "Jérémy";
-                    $age = 33;
-    
                     echo ("Bonjour " . $lastname. " ". $firstname. ", tu as ".$age." ans.");
                     ?>
                 </p>
@@ -190,10 +185,6 @@
             </div>
             <div class="col-xl-2">
                 <?php
-                $sum = 3+4;
-                $multiple = 5*20;
-                $divide = 45/5;
-                
                 echo "Somme de 3 et 4 : ".$sum;
                 echo("<br>");
                 
