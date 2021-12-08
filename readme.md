@@ -7,6 +7,7 @@
 Envie de participer ?
 
 * Fork le repo
+* Clone le à la racine de ton serveur local ```bash git clone https://github.com/Thot80/la-manu-php.git chemin/repertoire/detravail```
 * Créer une nouvelle branche ```bash git checkout NomDeLaBranche ```
 * Fait des modifs
 * Indexe les ```bash git add . ```
