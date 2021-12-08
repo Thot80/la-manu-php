@@ -2,17 +2,17 @@
 
 ## Mode d'Emploi
 
-* Pour cloner ce repo : ```bash git clone https://github.com/Thot80/la-manu-php.git ```
+* Pour cloner ce repo : ``` git clone https://github.com/Thot80/la-manu-php.git ```
 
 Envie de participer ?
 
 * Fork le repo
-* Clone le à la racine de ton serveur local ```bash git clone https://github.com/Thot80/la-manu-php.git chemin/repertoire/detravail```
-* Créer une nouvelle branche ```bash git checkout NomDeLaBranche ```
+* Clone le à la racine de ton serveur local ``` git clone https://github.com/Thot80/la-manu-php.git chemin/repertoire/detravail```
+* Créer une nouvelle branche ``` git checkout NomDeLaBranche ```
 * Fait des modifs
-* Indexe les ```bash git add . ```
-* Commit tes changements ```bash git commit -m "mon commit"```
-* Publie les sur ton repo ```bash git push ```
+* Indexe les ``` git add . ```
+* Commit tes changements ``` git commit -m "mon commit"```
+* Publie les sur ton repo ``` git push ```
 * Fait moi une pull request !
 
 Pour profiter au maximum de la navigation :
