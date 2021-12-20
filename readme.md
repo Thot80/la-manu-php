@@ -40,4 +40,10 @@ Pour profiter au maximum de la navigation :
     * [Let's Git](github/github.md)
 
 
+## Enoncés
 
+### Les Variables
+
+![variables](img/variables.png)
+
+[Solution](procedural/variables/variables.php)
