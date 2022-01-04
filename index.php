@@ -169,6 +169,11 @@
         </div>
     </div>
     <div class="row">
+        <div class="col-12">
+            <h2>POO</h2>
+        </div>
+    </div>
+    <div class="row">
         <div class="col-lg-3">
             <h3>Orc vs Human</h3>
         </div>
@@ -180,6 +185,39 @@
         </div>
         <div class="col-lg-3">
             <a href="github/assets/doc/git.pdf" class="btn btn-primary">Cheat Sheets</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3">
+            <h3>Challenge</h3>
+        </div>
+        <div class="col-lg-3">
+           <a class="btn btn-primary" href="poo/challenge/challenge.pdf" target="_blank">Ennoncé</a>
+        </div>
+        <div class="col-lg-3">
+            <a href="poo/challenge/index.php" class="btn btn-primary">Exercices</a>
+        </div>
+        <div class="col-lg-3">
+            <a href="github/assets/doc/git.pdf" class="btn btn-primary">Cheat Sheets</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <h2>PDO</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3">
+            <h3>Ecrire ees Données</h3>
+        </div>
+        <div class="col-lg-3">
+           <a class="btn btn-primary" href="pdo/pdo.md" target="_blank">Ennoncé</a>
+        </div>
+        <div class="col-lg-3">
+            <a href="pdo/index.php" class="btn btn-primary">Exercices</a>
+        </div>
+        <div class="col-lg-3">
+            <a href="#" class="btn btn-primary">Cheat Sheets</a>
         </div>
     </div>
 </div>

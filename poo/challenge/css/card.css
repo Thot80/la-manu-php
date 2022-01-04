@@ -1,0 +1,21 @@
+.card{
+    width: 18rem;
+}
+.container-fluid, body{
+    height: 100vh;
+    background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,9,9,1) 29%, rgba(38,47,48,1) 76%); 
+}
+.monster-card{
+    margin: 0 50px 0 auto;
+}
+.hero-card{
+    margin: 0 auto 0 50px;
+}
+.btn-container{
+   
+    color: #f1f1f1;
+}
+.btn-round{
+    width:200px;
+}

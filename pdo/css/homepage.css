@@ -1,0 +1,11 @@
+.bg-main{
+    background-image: url(../img/emmergency.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+}
+tr {
+    cursor: pointer;
+}

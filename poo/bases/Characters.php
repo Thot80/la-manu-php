@@ -1,6 +1,6 @@
 <?php
 
-class Character{
+class Characters{
     protected int $health;
     protected int $rage;
 
@@ -25,8 +25,8 @@ class Character{
         $this->setHealth($health);
     }
 
-    public function attacked(Character $character){
-        if($this instanceof Hero && $character instanceof Orc){
+    public function attacked(Characters $character){
+        if($this instanceof Heros && $character instanceof Orc){
             $damage = random_int(600, 800);
             $character->setDamage($damage);
             if($damage < $this->getShieldValue()){
@@ -43,17 +43,17 @@ class Character{
                 $this->setRage(0);
             }
         }
-        else if ($this instanceof Orc && $character instanceof Hero){
+        else if ($this instanceof Orc && $character instanceof Heros){
             $this->health -= $character->getWeaponDamage();
         }
     }
 
-    public function attack(Character $character){
+    public function attack(Characters $character){
         
         if($this instanceof Orc){
             $character->attacked($this);
         }
-        else if($this instanceof Hero) {
+        else if($this instanceof Heros) {
             $character->attacked($this);
         }
     }

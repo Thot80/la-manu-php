@@ -1,5 +1,5 @@
 <?php
-class Hero extends Character{
+class Heros extends Characters{
     private string $weapon;
     private int $weaponDamage;
     private string $shield;

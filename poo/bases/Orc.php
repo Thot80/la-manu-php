@@ -1,6 +1,6 @@
 <?php
 
-class Orc extends Character{
+class Orc extends Characters{
     private int $damage = 0;
 
     public function setDamage(int $damage):void{
