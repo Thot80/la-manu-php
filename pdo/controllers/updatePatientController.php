@@ -16,8 +16,6 @@ if( isset($_GET['id']) && !empty($_GET['id']) ){
        if(!empty($_POST["phone"]) && isset($_POST["phone"])) {
            $phone = $_POST["phone"];
        }
-       $dao = new Database();
-       $dao->connect();
        $hasSucced = $dao->updatePatient(id: $id, lastname:$lastname, firstname:$firstname, mail:$email, birthdate:$birthdate, phone:$phone);
        if($hasSucced){
         echo '<div class="is-valid w-100 text-center alert alert-success" role="alert">Modification réussi</div>';

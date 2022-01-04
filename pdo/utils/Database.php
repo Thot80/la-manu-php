@@ -106,7 +106,6 @@
 
             try{
                 $statement = $this->conn->prepare('INSERT INTO Appointments (dateHour, idPatients) VALUES (:dateHour, :idPatients)');
-                //YYYY-MM-DD hh:mm:ss
                 $dateTime = $appointmentDate.' '.$appointmentTime;
                 $statement->bindParam(':dateHour', $dateTime);
                 $statement->bindParam(':idPatients', $patientId);
@@ -138,6 +137,22 @@
             }
             catch(PDOException $e){
                 echo 'Erreur : '. $e->getMessage();
+            }
+        }
+
+        public function updateAppointment(int $id, string $date, string $time): bool{
+
+            try{
+                $statement = $this->conn->prepare('UPDATE Appointments SET dateHour = :dateHour WHERE id = :id');
+                $statement->bindParam(':id', $id, PDO::PARAM_INT);
+                $dateTime = $date.' '.$time;
+                $statement->bindParam(':dateHour', $dateTime);
+                $statement->execute();
+                return true;
+            }
+            catch(PDOException $e){
+                echo 'Erreur : ' . $e->getMessage();
+                return false;
             }
         }
     }

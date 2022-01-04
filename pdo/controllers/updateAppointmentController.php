@@ -7,21 +7,13 @@ if( isset($_GET['id']) && !empty($_GET['id']) ){
     $dao->connect();
     $appointment = $dao->getOneAppointmentById($appointmentId);
     $patient = $dao->getOnePatientById($appointment->idPatients);
-    if(isset($_POST["lastname"]) && !empty($_POST["lastname"]) && isset($_POST["firstname"]) && !empty($_POST["firstname"]) && isset($_POST["email"]) && !empty($_POST["email"]) && isset($_POST["birthdate"]) && !empty($_POST["birthdate"])) {
+    if(isset($_POST["appointmentDate"]) && !empty($_POST["appointmentDate"]) && isset($_POST["appointmentTime"]) && !empty($_POST["appointmentTime"])){
   
-        $lastname = $_POST["lastname"];
-        $firstname = $_POST["firstname"];
-        $email = $_POST["email"];
-        $birthdate = $_POST["birthdate"];
-        $phone = "";
-       if(!empty($_POST["phone"]) && isset($_POST["phone"])) {
-           $phone = $_POST["phone"];
-       }
-       $dao = new Database();
-       $dao->connect();
-       $hasSucced = $dao->updatePatient(id: $id, lastname:$lastname, firstname:$firstname, mail:$email, birthdate:$birthdate, phone:$phone);
-       if($hasSucced){
-        echo '<div class="is-valid w-100 text-center alert alert-success" role="alert">Modification réussi</div>';
+        $date = $_POST['appointmentDate'];
+        $time = $_POST['appointmentTime'];
+        $hasSucced = $dao->updateAppointment($appointmentId, $date, $time);
+        if($hasSucced){
+            echo '<div class="is-valid w-100 text-center alert alert-success" role="alert">Modification réussi</div>';
         }
     }
 }else{
