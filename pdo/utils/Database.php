@@ -102,6 +102,20 @@
             }
         }
 
+        public function deletePatientById(int $patientId){
+            try{
+                $this->deleteAppointmentsByPatient($patientId);
+                $statement = $this->conn->prepare('DELETE FROM Patients WHERE id = :id');
+                $statement->bindParam(':id', $patientId, PDO::PARAM_INT);
+                $statement->execute();
+                return true;
+            }
+            catch(PDOException $e){
+                echo 'Erreur : ' . $e->getMessage();
+                return false;
+            }
+        }
+
         public function addAppointment(int $patientId, string $appointmentDate, string $appointmentTime): bool{
 
             try{
@@ -166,10 +180,22 @@
                 return false;
             }
         }
-        public function deleteAppointment(int $appointmentId){
+        public function deleteAppointmentbyId(int $appointmentId){
             try{
                 $statement = $this->conn->prepare('DELETE FROM Appointments WHERE id = :id');
                 $statement->bindParam(':id', $appointmentId, PDO::PARAM_INT);
+                $statement->execute();
+                return true;
+            }
+            catch(PDOException $e){
+                echo 'Erreur : ' . $e->getMessage();
+                return false;
+            }
+        }
+        public function deleteAppointmentsByPatient(int $idPatient){
+            try{
+                $statement = $this->conn->prepare('DELETE FROM Appointments WHERE idPatients = :idPatients');
+                $statement->bindParam(':idPatients', $idPatient, PDO::PARAM_INT);
                 $statement->execute();
                 return true;
             }

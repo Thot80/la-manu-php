@@ -2,12 +2,12 @@
 require_once '../utils/Database.php';
 $dao = new Database();
 $dao->connect();
-$appointments = $dao->getAllAppointments();
+$patients = $dao->getAllPatients();
 
 if(isset($_POST["delete"])){
-    $appointmentId = $_POST['appointment'];
-    $dao->deleteAppointmentbyId($appointmentId);
-    $appointments = $dao->getAllAppointments();
+    $patientId = $_POST['patient'];
+    $dao->deletePatientById($patientId);
+    $patients = $dao->getAllPatients();
     echo '<div class="is-valid w-100 text-center alert alert-success" role="alert">Suppression réussie</div>';
 }
 ?>

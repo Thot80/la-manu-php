@@ -36,7 +36,9 @@ $patients = require_once '../controllers/listPatientController.php';
                     <?php endforeach ?>
                 </tbody>
             </table>
-            <a class="btn btn-success mx-auto d-block w-25" href="ajout-patient.php">Ajouter un patient</a>
+            <a class="btn btn-success mx-auto d-block w-25 my-3" href="ajout-patient.php">Ajouter un patient</a>
+            <a class="btn btn-danger mx-auto d-block w-25" href="delete-patient.php">Supprimer un patient</a>
+
         </main>
 <?php
 require_once '../footer.php';
