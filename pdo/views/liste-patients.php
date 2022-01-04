@@ -7,10 +7,30 @@ require_once '../controllers/listPatientController.php';
 <link rel="stylesheet" href="../css/homepage.css">
 </head>
 <html>
+<header>
+    <nav>
+        <ul class="nav justify-content-end">
+        <?php for($i = 1; $i <= $number_of_pages; $i++): ?>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="?page=<?= $i ?>"><?= $i ?></a>
+          </li>
+          <?php endfor ?>
+        </ul>
+    </nav>
+</header>
     <body>
         <main class="container-fluid">
             <div class="row col-12">
                 <h1>Liste des Patients</h1>
+            </div>
+            <div class="search-field w-25 my-5 mx-auto">
+                        <form action="liste-patients.php" method="post">
+                            <div class="mb-3">
+                                <label for="filter" class="form-label">Filtrer par nom :</label>
+                                <input name="filter" type="text" class="form-control" id="filter">
+                            </div>
+                            <button type="submit" id="search" name="search" value="yes" class="btn btn-primary mt-1 w-100">Rechercher</button>
+                        </form>
             </div>
             <table class="table table-hover">
                 <thead>
@@ -24,7 +44,7 @@ require_once '../controllers/listPatientController.php';
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($patients as $patient):?>
+                    <?php foreach ($patient_to_show as $patient):?>
                     <tr class="patient-row">
                     <th scope="row"><?=$patient->id?></th>
                     <td><?=$patient->lastname?></td>
@@ -38,15 +58,6 @@ require_once '../controllers/listPatientController.php';
             </table>
             <a class="btn btn-success mx-auto d-block w-25 my-3" href="ajout-patient.php">Ajouter un patient</a>
             <a class="btn btn-danger mx-auto d-block w-25" href="delete-patient.php">Supprimer un patient</a>
-            <div class="search-field w-25 my-5 mx-auto">
-                        <form action="liste-patients.php" method="post">
-                            <div class="mb-3">
-                                <label for="filter" class="form-label">Filtrer par nom :</label>
-                                <input name="filter" type="text" class="form-control" id="filter">
-                            </div>
-                            <button type="submit" id="search" name="search" value="yes" class="btn btn-primary mt-1 w-100">Rechercher</button>
-                        </form>
-            </div>
         </main>
 <?php
 require_once '../footer.php';

@@ -43,7 +43,7 @@ require_once '../controllers/addPatientController.php';
                 </div>
                 <button type="submit" class="btn btn-primary">Valider</button>
                 <a href="../index.php" class="btn btn-warning">Accueil</a>
-                <a href="liste-pateints.php" class="btn btn-success">Voir tous les Patients</a>
+                <a href="liste-patients.php" class="btn btn-success">Voir tous les Patients</a>
             </form>
         </main>
 <?php

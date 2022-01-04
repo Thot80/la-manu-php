@@ -83,6 +83,18 @@
                 echo 'Erreur : '. $e->getMessage();
             }
         }
+        public function getPatientByGroup(int $start, int $end):array{
+            try{
+                $statement = $this->conn->prepare('SELECT * FROM Patients LIMIT :offset :ending');
+                $statement->bindParam(':offset', $start);
+                $statement->bindParam(':ending', $end);
+                $statement->execute();
+                return $statement->fetchAll(PDO::FETCH_OBJ);
+            }
+            catch(PDOException $e){
+                echo 'Erreur : '. $e->getMessage();
+            }
+        }
         public function getOnePatientById(int $id):object{
             try{
                 $statement = $this->conn->prepare('SELECT * FROM Patients WHERE id = :id');
