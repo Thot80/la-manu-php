@@ -24,8 +24,12 @@ require_once '../controllers/deleteAppointmentController.php';
                         <?php endforeach ?>
                     </select>
                 </div>
-
-                <button type="submit" id="delete" name="delete" value="yes" class="btn btn-danger mt-5">Supprimer</button>
+                <div class="w-25">
+                    <button type="submit" id="delete" name="delete" value="yes" class="btn btn-danger mt-5 mb-3 w-50">Supprimer</button>
+                    <div>
+                        <a href="../index.php" class="btn btn-warning w-50">Accueil</a>
+                    </div>
+                </div>
             </form>
         </main>
 <?php

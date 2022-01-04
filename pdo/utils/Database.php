@@ -71,6 +71,18 @@
                 echo 'Erreur : '. $e->getMessage();
             }
         }
+        public function getPatientsByKeyword(string $keyword):array{
+            try{
+                $statement = $this->conn->prepare('SELECT * FROM Patients WHERE lastname LIKE :keyword');
+                $pattern = '%'.$keyword.'%';
+                $statement->bindParam(':keyword', $pattern);
+                $statement->execute();
+                return $statement->fetchAll(PDO::FETCH_OBJ);
+            }
+            catch(PDOException $e){
+                echo 'Erreur : '. $e->getMessage();
+            }
+        }
         public function getOnePatientById(int $id):object{
             try{
                 $statement = $this->conn->prepare('SELECT * FROM Patients WHERE id = :id');

@@ -1,7 +1,7 @@
 <?php
 require_once '../utils/Database.php';
 require_once '../header.php';
-$patients = require_once '../controllers/listPatientController.php';
+require_once '../controllers/listPatientController.php';
 ?>
 <title>Liste Patients</title>
 <link rel="stylesheet" href="../css/homepage.css">
@@ -38,7 +38,15 @@ $patients = require_once '../controllers/listPatientController.php';
             </table>
             <a class="btn btn-success mx-auto d-block w-25 my-3" href="ajout-patient.php">Ajouter un patient</a>
             <a class="btn btn-danger mx-auto d-block w-25" href="delete-patient.php">Supprimer un patient</a>
-
+            <div class="search-field w-25 my-5 mx-auto">
+                        <form action="liste-patients.php" method="post">
+                            <div class="mb-3">
+                                <label for="filter" class="form-label">Filtrer par nom :</label>
+                                <input name="filter" type="text" class="form-control" id="filter">
+                            </div>
+                            <button type="submit" id="search" name="search" value="yes" class="btn btn-primary mt-1 w-100">Rechercher</button>
+                        </form>
+            </div>
         </main>
 <?php
 require_once '../footer.php';
