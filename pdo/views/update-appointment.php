@@ -35,7 +35,7 @@ require_once '../header.php';
                 </div>
                 <button type="submit" class="btn btn-danger">Modifier</button>
                 <a href="../index.php" class="btn btn-warning">Accueil</a>
-                <a href="rendezvous.php?id=<?= $appointmentId ?>" class="btn btn-success">Voir Rendez-vous</a>
+                <a href="rendezvous.php?id=<?= $appointmentId ?>" class="btn btn-success">Voir le rendez-vous</a>
             </form>
         </main>
 <?php

@@ -25,6 +25,19 @@ require_once '../controllers/profilPatientController.php';
                                 <li class="list-group-item">Mail : <?= $patient->mail?></li>
                             </ul>
                         </p>
+                        <h6>Prochains rendez-vous</h6>
+                        <p class="card-text">
+                            <?php foreach($appointments as $appointment): ?>
+                                <ul class="list-group mb-3">
+                                    <li class="list-group-item">
+                                        Date du rendez-vous : <?= DateTime::createFromFormat('Y-m-d H:i:s',$appointment->dateHour)->format('d/m/Y') ?>
+                                    </li>
+                                    <li class="list-group-item">
+                                        Heure du rendez-vous : <?= DateTime::createFromFormat('Y-m-d H:i:s',$appointment->dateHour)->format('H:i') ?>
+                                    </li>
+                                </ul>
+                            <?php endforeach?>
+                        </p>
                         <a href="update-patient.php?id=<?= $patient->id?>" class="btn btn-warning">Modifier les informations</a>
                     </div>
                 </div>

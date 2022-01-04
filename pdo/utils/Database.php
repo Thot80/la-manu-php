@@ -139,7 +139,18 @@
                 echo 'Erreur : '. $e->getMessage();
             }
         }
+        public function getAppointmentsByPatient(int $patientId):array{
 
+            try{
+                $statement = $this->conn->prepare('SELECT * FROM Appointments WHERE idPatients = :idPatients ORDER BY dateHour ASC');
+                $statement->bindParam(':idPatients', $patientId, PDO::PARAM_INT);
+                $statement->execute();
+                return $statement->fetchAll(PDO::FETCH_OBJ);
+            }
+            catch(PDOException $e){
+                echo 'Erreur : '. $e->getMessage();
+            }
+        }
         public function updateAppointment(int $id, string $date, string $time): bool{
 
             try{
