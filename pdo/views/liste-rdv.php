@@ -32,7 +32,8 @@ $appointments = require_once '../controllers/listRdvController.php';
                     <?php endforeach ?>
                 </tbody>
             </table>
-            <a class="btn btn-success mx-auto d-block w-25" href="add-appointment.php">Ajouter un rendez-vous</a>
+            <a class="btn btn-success mx-auto d-block w-25 my-2" href="add-appointment.php">Ajouter un rendez-vous</a>
+            <a class="btn btn-danger mx-auto d-block w-25" href="delete-appointment.php">Supprimer un rendez-vous</a>
         </main>
 <?php
 require_once '../footer.php';

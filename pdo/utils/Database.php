@@ -166,4 +166,16 @@
                 return false;
             }
         }
+        public function deleteAppointment(int $appointmentId){
+            try{
+                $statement = $this->conn->prepare('DELETE FROM Appointments WHERE id = :id');
+                $statement->bindParam(':id', $appointmentId, PDO::PARAM_INT);
+                $statement->execute();
+                return true;
+            }
+            catch(PDOException $e){
+                echo 'Erreur : ' . $e->getMessage();
+                return false;
+            }
+        }
     }
