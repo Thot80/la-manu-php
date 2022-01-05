@@ -28,6 +28,11 @@ require_once 'header.php';
                             Voir tous les rendez-vous
                         </a>
                 </div>
+                <div class="d-flex justify-content-center w-25 mb-1">
+                        <a class="btn btn-secondary d-block w-50" href="views/ajout-patient-rendezvous.php" role="button">
+                            S'inscrire et prendre rendez vous
+                        </a>
+                </div>
             </div>
             
         </main>

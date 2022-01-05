@@ -55,7 +55,9 @@
                 return false;
             }
         }
-
+        public function getLastInsertedId():int{
+            return $this->conn->lastInsertId();
+        }
         /**
          * Gather every entries in Patients
          *
