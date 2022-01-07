@@ -87,9 +87,23 @@
         }
         public function getPatientByGroup(int $start, int $end):array{
             try{
-                $statement = $this->conn->prepare('SELECT * FROM Patients LIMIT :offset :ending');
-                $statement->bindParam(':offset', $start);
-                $statement->bindParam(':ending', $end);
+                $statement = $this->conn->prepare('SELECT * FROM Patients  LIMIT :offset OFFSET :ending');
+                $statement->bindParam(':offset', $start, PDO::PARAM_INT);
+                $statement->bindParam(':ending', $end, PDO::PARAM_INT);
+                $statement->execute();
+                return $statement->fetchAll(PDO::FETCH_OBJ);
+            }
+            catch(PDOException $e){
+                echo 'Erreur : '. $e->getMessage();
+            }
+        }
+        public function getPatientSearchGroup(string $keyword, int $start, int $end):array{
+            try{
+                $statement = $this->conn->prepare('SELECT * FROM Patients WHERE lastname LIKE :keyword LIMIT :offset OFFSET :ending');
+                $pattern = '%'.$keyword.'%';
+                $statement->bindParam(':keyword', $pattern);
+                $statement->bindParam(':offset', $start, PDO::PARAM_INT);
+                $statement->bindParam(':ending', $end, PDO::PARAM_INT);
                 $statement->execute();
                 return $statement->fetchAll(PDO::FETCH_OBJ);
             }
