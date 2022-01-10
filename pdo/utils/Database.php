@@ -85,6 +85,13 @@
                 echo 'Erreur : '. $e->getMessage();
             }
         }
+        /**
+         * Undocumented function
+         *
+         * @param integer $start
+         * @param integer $end
+         * @return array
+         */
         public function getPatientByGroup(int $start, int $end):array{
             try{
                 $statement = $this->conn->prepare('SELECT * FROM Patients  LIMIT :offset OFFSET :ending');
@@ -111,11 +118,21 @@
                 echo 'Erreur : '. $e->getMessage();
             }
         }
+        /**
+         * Récupère un objet patient à partir de son id
+         *
+         * @param integer $id
+         * @return object
+         */
         public function getOnePatientById(int $id):object{
             try{
+                // Je prépare la requête
                 $statement = $this->conn->prepare('SELECT * FROM Patients WHERE id = :id');
+                // Je lie le paramètre :id
                 $statement->bindParam(':id', $id, PDO::PARAM_INT);
+                // J'éxecute la requête
                 $statement->execute();
+                // Je récupère le résultat de la requête (fetch) sous forme d'objet et je le renvoi
                 return $statement->fetch(PDO::FETCH_OBJ);
             }
             catch(PDOException $e){
@@ -181,7 +198,12 @@
                 echo 'Erreur : '. $e->getMessage();
             }
         }
-
+        /**
+         * Undocumented function
+         *
+         * @param integer $id
+         * @return object
+         */
         public function getOneAppointmentById(int $id):object{
             try{
                 $statement = $this->conn->prepare('SELECT * FROM Appointments WHERE id = :id');
@@ -193,6 +215,12 @@
                 echo 'Erreur : '. $e->getMessage();
             }
         }
+        /**
+         * Undocumented function
+         *
+         * @param integer $patientId
+         * @return array
+         */
         public function getAppointmentsByPatient(int $patientId):array{
 
             try{

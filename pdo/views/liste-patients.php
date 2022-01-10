@@ -10,9 +10,13 @@ require_once '../controllers/listPatientController.php';
 <header>
     <nav>
         <ul class="nav justify-content-end">
+            <!-- On affiche un lien par nombre de page -->
         <?php for($i = 1; $i <= $number_of_pages; $i++): ?>
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="?page=<?= $i ?>"><?= $i ?></a>
+              <!-- Le liens vaut $i , 1,2,3 ...  -->
+              <!-- Le liens passe en URL le numéro de page qu'on veut -->
+              <!-- En réalité, on ne change pas de page, on charge des informations différentes en fonctions de la valeur de $i contenu dans l'URL sur la même page -->
+            <a class="nav-link" a, ria-current="page" href="?page=<?= $i ?>"><?= $i ?></a>
           </li>
           <?php endfor ?>
         </ul>
@@ -28,7 +32,7 @@ require_once '../controllers/listPatientController.php';
                             <div class="mb-3">
                                 <label for="filter" class="form-label">Filtrer par nom :</label>
                                 <input name="filter" type="text" class="form-control" id="filter">
-                            </div>
+                            </div> 
                             <button type="submit" id="search" name="search" value="yes" class="btn btn-primary mt-1 w-100">Rechercher</button>
                         </form>
             </div>
