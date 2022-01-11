@@ -1,6 +1,8 @@
 <?php
-$dao = new Database();
-$dao->connect();
+require_once '../models/Appointment.php';
+require_once '../views/add-appointment.php';
+
+
 $patients = $dao->getAllPatients();
 
 if(isset($_POST['patient']) && !empty($_POST['patient']) && isset($_POST['appointmentDate']) && !empty($_POST['appointmentDate']) && isset($_POST['appointmentTime']) && !empty($_POST['appointmentTime'])){

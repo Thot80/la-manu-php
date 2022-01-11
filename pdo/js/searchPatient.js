@@ -6,7 +6,7 @@ function ajaxRequest(url, filter){
     httpRequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     let dataToSend = 'search=true&filter='+encodeURIComponent(filter);
     console.log(dataToSend);
-    httpRequest.send(dataToSend);
+    httpRequest.send(dataToSend);   
 }
 function serverResponse(){
     if(httpRequest.readyState === XMLHttpRequest.DONE){
