@@ -58,6 +58,13 @@
         public function getLastInsertedId():int{
             return $this->conn->lastInsertId();
         }
+
+        public function getCountPatient():int{
+            $statement = $this->conn->prepare('SELECT COUNT(id) as nbPatient FROM PATIENTS');
+            $statement->execute();
+            $patient = $statement->fetch(PDO::FETCH_OBJ);
+            return $patient->nbPatient;
+        }
         /**
          * Gather every entries in Patients
          *

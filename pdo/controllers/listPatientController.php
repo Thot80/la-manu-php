@@ -1,4 +1,5 @@
 <?php
+include_once '../utils/Database.php';
 // Connexion à la BDD
 $dao = new Database();
 $dao->connect();
@@ -6,11 +7,9 @@ $dao->connect();
 // On choisit le nombre d'élément par page, on peut ensuite changer la valeur ici pour modifier directement toute la logique qui s'en sert
 $elements_per_page = 10;
 
-// On récupère tous les patients
-$patients = $dao->getAllPatients();
 
-// On compte le nombre de patient qu'il y a
-$number_of_element = count($patients);
+
+$number_of_element = $dao->getCountPatient();
 
 if(isset($_POST['search'])){
     $filter = $_POST['filter'];
@@ -24,9 +23,6 @@ if(isset($_POST['search'])){
     $patient_to_show = $dao->getPatientSearchGroup($filter, $elements_per_page, $start);   
 }else{
     // pagination
-
-    // Compte le nombre d'éléments à afficher
-    $number_of_element = count($patients);
 
     // Calcul du nombre de page nécessaire
     $number_of_pages = ceil($number_of_element/$elements_per_page);
